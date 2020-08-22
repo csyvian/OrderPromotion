@@ -1,10 +1,19 @@
+using OrderPromotion.Enums;
+
 namespace OrderPromotion.Promotions
 {
     public class SecondPromotion : IPromotion
     {
-        public decimal GetPrice() 
+        private int productCount;
+        public SecondPromotion(ProductType productType)
         {
-            return 0;
+            if(productType == ProductType.C || productType == ProductType.D)
+                productCount++;
+        }
+
+        public decimal GetPrice(decimal itemPrice, decimal packPrice, int packSize) 
+        {
+            return packPrice * (productCount / packSize) + itemPrice * (productCount % packSize);
         }
     }
 }

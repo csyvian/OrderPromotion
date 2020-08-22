@@ -39,9 +39,9 @@ namespace OrderPromotion.Models
 
             };
 
-        public Dictionary<ProductType, int> GetOrderById(int id)
+        public Dictionary<ProductType, int> GetOrderByOrderId(int orderId)
         {
-            return orders[id];
+            return orders[orderId];
         }
     }
 }
