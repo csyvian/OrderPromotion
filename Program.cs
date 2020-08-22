@@ -1,4 +1,5 @@
 ﻿using System;
+using OrderPromotion.Models;
 
 namespace OrderPromotion
 {
@@ -7,6 +8,7 @@ namespace OrderPromotion
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var product = new Product();
         }
     }
 }
