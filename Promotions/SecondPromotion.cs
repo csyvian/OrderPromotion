@@ -4,16 +4,20 @@ namespace OrderPromotion.Promotions
 {
     public class SecondPromotion : IPromotion
     {
-        private int productCount;
+        private int productCCount;
+        private int productDCCount;
         public SecondPromotion(ProductType productType)
         {
-            if(productType == ProductType.C || productType == ProductType.D)
-                productCount++;
+            if(productType == ProductType.C)
+                productCCount++;
+            else if(productType == ProductType.D)
+                productDCount++;
         }
 
         public decimal GetPrice(decimal itemPrice, decimal packPrice, int packSize) 
         {
-            return packPrice * (productCount / packSize) + itemPrice * (productCount % packSize);
+            var commonCount = Math.Min(productCCount, productDCount);
+            return (packPrice * commonCount)  + (itemCPrice * (productCCount % commonCount)) + (itemDPrice * (productDCount % commonCount));
         }
     }
 }
