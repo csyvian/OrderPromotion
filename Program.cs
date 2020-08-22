@@ -9,6 +9,7 @@ namespace OrderPromotion
         {
             Console.WriteLine("Hello World!");
             var product = new Product();
+            var cart = new ShoppingCart();
         }
     }
 }

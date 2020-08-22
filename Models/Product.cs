@@ -19,5 +19,10 @@ namespace OrderPromotion.Models
             else   
                 products.Add(product.Id, product.Price);
         }
+
+        public Dictionary<ProductType, decimal> GetProducts()
+        {  
+            return products;
+        }
     }
 }
